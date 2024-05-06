@@ -1,0 +1,21 @@
+﻿
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form data-bind="submit:addItem">
+            Company: <input type="text" data-bind="value:itemToAdd,valueUpdate:'afterkeydown'" />
+            <input type="submit" data-bind="enable:itemToAdd().length>0" />
+            <p>Item Added</p>
+            <select multiple style="width:200px" data-bind="options:items"></select>
+        </form>
+
+
+        <input type="button" value="click" onclick="alertMe()" />
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+
+@section scripts {
+    <script src="~/js/company.js"></script>
+}
