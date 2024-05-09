@@ -1,0 +1,32 @@
+﻿
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div>
+            <label>Show/Hide Message:</label>
+            <input type="button" value="click" onclick="flipShowHide()" />
+        </div>
+        
+        <p data-bind="visible:showMsg">Message visibility controlled by knockout</p>
+
+        <div>
+            <p>Binding style</p>
+            <label>Mark</label>
+            <input type="text" data-bind="value:mark" />
+            <span data-bind="style:{color:mark() < 33?'red':'green'}"> Result</span>
+        </div>
+        <div>
+            <p>Binding Attribute</p>
+            <a data-bind="attr:{href:url}"> Link</a>
+        </div>
+
+    </div>
+
+    <div class="col-md-3"></div>
+</div>
+
+
+@section scripts {
+    <script src="~/js/binding.js"></script>
+}

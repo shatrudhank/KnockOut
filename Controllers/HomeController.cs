@@ -32,5 +32,14 @@ namespace KnockOutpractice.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Binding()
+        {
+            return View();
+        }
+        public IActionResult BindingControl()
+        {
+            return View();
+        }
     }
 }

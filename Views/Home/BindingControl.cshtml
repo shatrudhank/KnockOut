@@ -1,0 +1,66 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped ">
+            <thead class=" table-dark">
+                <tr>
+                   <td>Id</td>
+                   <td>Name</td>
+               </tr>
+           </thead>
+            <tbody data-bind="foreach:viewModel.data">
+               <tr>
+                    <td data-bind="text:Id"></td>
+                    <td data-bind="text:Name"></td>
+               </tr>
+           </tbody>
+         </table>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-striped ">
+            <thead class=" table-dark">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:viewModel1.data">
+                <tr>
+                    <td data-bind="text:Id"></td>
+                    <td data-bind="text:Name"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <p>Control flow with $data</p>
+        <ul class="list-group"  data-bind="foreach:monthModel.months">
+            <li class="list-group-item" data-bind="text: $data"></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <p>Control flow with comment</p>
+        <ul class="list-group">
+            <li class="list-group-item"> for each with comment</li>
+            <!-- ko foreach:monthModel.months-->
+            <li class="list-group-item" data-bind="text: $data"></li>
+            <!-- /ko-->
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <label>
+            <input type="checkbox" data-bind="checked:termModel.termChecked"></input>: Display terms and condition
+        </label>
+        <p style="color:green" data-bind="if:termModel.termChecked">Terms and condition</p>
+    </div>
+    <div class="col-md-6">
+        
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/bindingControl.js"></script>
+}
