@@ -1,13 +1,12 @@
-/// <reference path="../knockout/knockout-latest.js" />
-
-var bindingModel = function () {
-    this.showMsg = ko.observable(true);
-    this.url = ko.observable("www.google.com");
-    this.mark = ko.observable(20);
-    this.flipShowHide = function () {
-        this.showMsg(!this.showMsg());
+var Binding = /** @class */ (function () {
+    function Binding() {
+        this.showMsg = ko.observable(false);
+        this.url = ko.observable("www.google.com");
+        this.mark = ko.observable(23);
     }
-}
-
-
-ko.applyBindings(bindingModel);
+    Binding.prototype.FlipShowMsg = function () {
+        this.showMsg(!this.showMsg());
+    };
+    return Binding;
+}());
+ko.applyBindings(new Binding());

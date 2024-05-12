@@ -1,33 +1,18 @@
-/// <reference path="../knockout/knockout-latest.js" />
-
-var viewModel = {
-    data: [
-        { "Id": 1, "Name": "Shatrudhan" },
-        { "Id": 2, "Name": "Anuj" }
-    ]
-};
-
-var viewModel1 = {
-    data: [
-        { "Id": 1, "Name": "Amit" },
-        { "Id": 2, "Name": "Raj" }
-    ]
-};
-
-var monthModel = {
-    months: [
-        "January",
-        "February",
-        "March",
-        "April"
-    ]
-};
-
-var termModel = {
-    termChecked: ko.observable(false)
-};
-
-ko.applyBindings(viewModel);
-ko.applyBindings(viewModel1);
-ko.applyBindings(monthModel);
-ko.applyBindings(termModel);
+var Student = /** @class */ (function () {
+    function Student(id, name) {
+        this.Id = id;
+        this.Name = name;
+    }
+    return Student;
+}());
+var BindingControlVm = /** @class */ (function () {
+    function BindingControlVm() {
+        this.StudentArray = [];
+        this.termChecked = ko.observable(true);
+        this.WeekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        this.StudentArray.push(new Student(1, "Shatrudhan"));
+        this.StudentArray.push(new Student(2, "Anuj"));
+    }
+    return BindingControlVm;
+}());
+ko.applyBindings(new BindingControlVm());

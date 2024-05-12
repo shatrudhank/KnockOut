@@ -1,18 +1,17 @@
-/// <reference path="../knockout/knockout-latest.js" />
-
-var ListModel = function (items) {
-    this.items = ko.observableArray(items);
-    this.itemToAdd = ko.observable("");
-    this.addItem = function () {
-        if (this.itemToAdd() != "") {
-            this.items.push(this.itemToAdd());
-            this.itemToAdd("");
-        }
-    }.bind(this);
-
-    this.alertMe = function () {
-        alert("You have alert");
-    }.bind(this);
-};
-
-ko.applyBindings(ListModel);
+var Company = /** @class */ (function () {
+    function Company(data) {
+        this.addItem = function () {
+            if (this.itemToAdd().length > 0) {
+                this.items.push(this.itemToAdd());
+                this.itemToAdd("");
+            }
+        };
+        this.items = ko.observableArray(data);
+        this.itemToAdd = ko.observable("");
+    }
+    Company.prototype.AlertMe = function () {
+        alert("Hello");
+    };
+    return Company;
+}());
+ko.applyBindings(new Company(["Luxoft"]));

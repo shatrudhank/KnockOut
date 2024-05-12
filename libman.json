@@ -4,7 +4,10 @@
   "libraries": [
     {
       "library": "knockout@3.5.1",
-      "destination": "wwwroot/knockout/"
+      "destination": "wwwroot/knockout/",
+      "files": [
+        "knockout-latest.js"
+      ]
     }
   ]
 }
